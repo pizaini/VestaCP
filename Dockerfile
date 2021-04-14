@@ -19,9 +19,9 @@ RUN curl -O http://vestacp.com/pub/vst-install.sh
 RUN bash vst-install.sh --nginx no --apache yes --phpfpm no --named no --remi no --vsftpd no --proftpd yes --iptables no --fail2ban no --quota yes --exim no --dovecot no --spamassassin no --clamav no --softaculous yes --mysql no --postgresql no --hostname ${VESTACP_HOSTNAME} --email ${VESTACP_EMAIL} --password ${VESTACP_PASSWORD} --interactive no -f
 
 #homedir
-VOLUME ["/home"]
+#VOLUME ["/home"]
 #Volumes apache
-VOLUME ["/etc/apache2"]
+#VOLUME ["/etc/apache2"]
 #Volumes php
 #VOLUME [""]
 #Volumes named
@@ -29,9 +29,9 @@ VOLUME ["/etc/apache2"]
 #Volumes php
 #VOLUME ["/etc/crontab"]
 #Volumes Cron
-VOLUME ["/etc/crontab"]
+#VOLUME ["/etc/crontab"]
 #Volumes Vesta
-VOLUME ["/usr/local/vesta"]
+#VOLUME ["/usr/local/vesta"]
 
 EXPOSE 21 80 443 8083
 
