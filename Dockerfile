@@ -1,4 +1,4 @@
-FROM phusion/baseimage:bionic-1.0.0
+FROM phusion/baseimage:master-arm64
 MAINTAINER pizaini <instagram.com/pizaini>
 
 #ARGS
@@ -33,8 +33,12 @@ RUN bash vst-install.sh --nginx no --apache yes --phpfpm no --named no --remi no
 #Volumes Vesta
 #VOLUME ["/usr/local/vesta"]
 
+#Running scripts during container startup
+#
+#RUN mkdir -p /etc/my_init.d/
+#COPY startservices.sh /etc/my_init.d/startservices.sh
+#RUN chmod +x /etc/my_init.d/startservices.sh
+
 EXPOSE 21 80 443 8083
 
-#start sevices
-CMD ["service", "vesta", "start"]
-CMD ["service", "apache2", "start"]
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
