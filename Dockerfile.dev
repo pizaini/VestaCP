@@ -1,0 +1,6 @@
+FROM phusion/baseimage:bionic-1.0.0
+MAINTAINER pizaini <instagram.com/pizaini>
+
+RUN mkdir -p /etc/my_init.d/
+COPY 01_startservices.sh /etc/my_init.d/01_startservices.sh
+RUN chmod +x /etc/my_init.d/01_startservices.sh

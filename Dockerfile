@@ -1,4 +1,4 @@
-FROM phusion/baseimage:master-arm64
+FROM phusion/baseimage:bionic-1.0.0
 MAINTAINER pizaini <instagram.com/pizaini>
 
 #ARGS
@@ -9,7 +9,7 @@ ENV VESTACP_PASSWORD=${ARG_VESTACP_PASSWORD}
 ARG ARG_VESTACP_HOSTNAME="yourhost.domain.com"
 ENV VESTACP_HOSTNAME=${ARG_VESTACP_HOSTNAME}
 
-#install crontab
+#get updates
 RUN apt update
 
 #download vestacp
